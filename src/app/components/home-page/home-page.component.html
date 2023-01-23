@@ -1,0 +1,25 @@
+<button mat-raised-button (click)="logOut()" color="primary">Log Out</button>
+
+<div class="container">
+  <mat-card class="coin-card" *ngFor="let coin of coins">
+    <mat-card-header>
+      <mat-card-title class="title">{{ coin.attributes.name }}</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content class="content">
+      <!-- <p>
+        {{ coin.attributes.description }}
+      </p> -->
+      <img
+        mat-card-image
+        src="http://localhost:1337{{
+          coin.attributes.image.data.attributes.url
+        }}"
+        alt="Photo of a Shiba Inu"
+      />
+    </mat-card-content>
+    <mat-card-actions class="footer">
+      <p>Price: $ {{ coin.attributes.price }}</p>
+    </mat-card-actions>
+  </mat-card>
+</div>
